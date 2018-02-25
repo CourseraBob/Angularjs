@@ -1,15 +1,34 @@
-<!DOCTYPE html>
-<html ng-app="myFirstApp">
-	<head>
-		<script src="angular.min.js"></script>
-		<script src="app.js"></script>
-		<title>Assignment 1</title>
-	</head>
-	<body>
-		<h1>Assignment #1</h1>
-		<div ng-controller="MyFirstController">
-			<input type="text" ng-model="name">
-			Inside my input is: {{name}}
-		</div>
-	</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .messageGreen { border: 2px solid green; }
+      .messageRed { border: 2px solid Red; }
+    </style>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController" >
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="listOfDishes">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkTooMuch()">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <span ng-style="messageStyle">{{message}}</span>
+         </div>
+   </div>
+   <span>Please note that empty(zero length) items are ignored.  For example: pizza,fries,,yogurt would be treated as 3 items</span>
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
