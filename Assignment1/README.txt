@@ -1,1 +1,1 @@
-This is Assignment1 for the Amgular course
+This is Assignment1 for the Angular course.
