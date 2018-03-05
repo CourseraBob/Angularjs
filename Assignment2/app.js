@@ -30,7 +30,7 @@ function ShoppingListCheckOffService () {
 		console.log( 'Bought item', idx );
 		var item = toBuy[idx];
 		toBuy.splice( idx, 1 );
-		bought.push( item );
+		bought.push( 'Bought ' + item );
  	}
 
 	this.getToBuyList = function () {
