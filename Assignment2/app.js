@@ -21,7 +21,9 @@ function AlreadyBoughtController ($scope, ShoppingListCheckOffService) {
 }
 
 function ShoppingListCheckOffService () {
-	var toBuy = ['1 Litre Milk', '1 Loaf of Bread', '2 Dozen Eggs', '1 Box Icecream Bars' ];
+	var toBuy = ['1 Litre Milk', '1 Loaf of Bread', 
+					'2 Dozen Eggs', '1 Box Icecream Bars',
+					'1 Block Cheese(any type)', '2 Frozen Pizzas' ];
 	var bought = [];
 
 	this.boughtItem = function ( idx ) {
@@ -29,7 +31,7 @@ function ShoppingListCheckOffService () {
 		var item = toBuy[idx];
 		toBuy.splice( idx, 1 );
 		bought.push( item );
-	}
+ 	}
 
 	this.getToBuyList = function () {
 		return ( toBuy );
