@@ -81,7 +81,7 @@ function MenuSearchService($http, davids) {
 				
                 if (searchTerm !== '' ) {
                     console.log("have search term");
-                    if (response.data.menu_items[i].name.toLowerCase().indexOf(searchTerm) !== -1) {
+                    if (response.data.menu_items[i].description.toLowerCase().indexOf(searchTerm) !== -1) {
                         foundItems.push(response.data.menu_items[i]);
                     }
                 } else {
