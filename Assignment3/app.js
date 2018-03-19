@@ -41,13 +41,13 @@ function NarrowItDownController($scope, MenuSearchService) {
 				//ctrl.empty = MenuSearchService.isEmpty();
 			})
 			.catch(function(error) {
-			console.log(error);
+			//console.log(error);
 			});
             ctrl.empty = '';
 		} else {
             ctrl.found = [];
-			ctrl.empty = 'Please enter a search term';
-			console.log(ctrl.empty);
+			ctrl.empty = 'Nothing Found';
+			//console.log(ctrl.empty);
 		};
 	};
 
@@ -69,7 +69,7 @@ function MenuSearchService($http, davids) {
 	service.getMatchedMenuItems = function (searchTerm) {
 		
 		searchTerm = searchTerm.trim().toLowerCase();
-        console.log( searchTerm );
+        //console.log( searchTerm );
 
 		return $http ({
 			method: "GET",
@@ -80,7 +80,7 @@ function MenuSearchService($http, davids) {
 			for(var i=0; i<response.data.menu_items.length; i++) {
 				
                 if (searchTerm !== '' ) {
-                    console.log("have search term");
+                    //console.log("have search term");
                     if (response.data.menu_items[i].description.toLowerCase().indexOf(searchTerm) !== -1) {
                         foundItems.push(response.data.menu_items[i]);
                     }
