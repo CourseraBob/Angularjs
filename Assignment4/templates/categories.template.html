@@ -1,0 +1,14 @@
+<a ui-sref="home">Home</a> &lt;
+
+    <ul>
+        <li>title {{ $ctrl.categoryList }} ??</li>
+        <li>Scope: {{ categoriesCtrl.categoryList }}</li>
+        <li>Scope: {{ categoryList }}</li>
+        <li ng-repeat="category in categoriesCtrl.categoryList">
+            {{ category.name }}
+        </li>
+    </ul>
+    <script>console.log('in categories.template.html');</script>
+
+    <categories categoryList='categoriesCtrl.categoryList'></categories>
+    <p  ui-sref="items"> my categories template</p>
